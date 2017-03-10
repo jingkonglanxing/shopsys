@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+SETTINGS_DIR = os.path.dirname(__file__)   ####  for use to locate setting.py
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shopsys.apps.catalog',  #####app all under shopsys/shopsys/app/
 ]
 
 MIDDLEWARE = [
@@ -54,8 +55,9 @@ ROOT_URLCONF = 'shopsys.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        #'DIRS': [os.path.join(BASE_DIR, 'templates')],  the system self
+        ### below to locate templates to the same of settings.py
+        'DIRS': [os.path.join(SETTINGS_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
