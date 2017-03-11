@@ -52,9 +52,13 @@ class Product(models.Model):
     is_featured = models.BooleanField("标为推荐", default=False)
     quantity = models.IntegerField("数量")
     description = models.TextField("描述")
-    meta_keywords = models.CharField(
+    meta_description = models.CharField(
         "Meta描述",
         max_length=255, help_text='Meta 描述标签')
+    meta_Keywords = models.CharField(
+        "关键词", max_length=255,
+        default='水果', ##########遗漏字段，添加时要添加默认值
+        help_text='meta关键词 有利于SEO 用逗号分割')
     created_at = models.DateTimeField("创建时间", auto_now_add=True)
     updated_at = models.DateTimeField("更新时间", auto_now=True)
     categories = models.ManyToManyField(Category)

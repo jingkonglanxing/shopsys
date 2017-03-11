@@ -126,3 +126,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#用户上传文件位置
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
+#站点设置
+SITE_NAME = '水果居士'
+META_KEYWORDS ='水果, 苹果, 香蕉, 橘子'
+META_DESCRIPTION = '水果居士---郑州最新鲜的水果'
+
+
