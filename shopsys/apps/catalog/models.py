@@ -12,7 +12,11 @@ class Category(models.Model):
         help_text='根据name生成的，用于生成页面URL,必须唯一')
     description = models.TextField("描述")
     is_active = models.BooleanField("是否激活", default=True)
-    meta_keywords = models.CharField(
+    meta_Keywords = models.CharField(
+        "关键词", max_length=255,
+        default='水果', ##########遗漏字段，添加时要添加默认值
+        help_text='meta关键词 有利于SEO 用逗号分割')
+    meta_description = models.CharField(
         "Meta 描述", max_length=255,
     help_text='meta描述')
     created_at = models.DateTimeField("创建时间", auto_now_add=True)
